@@ -1,5 +1,5 @@
 # do NOT include a trailing slash on the base URL
-base_url = "https://yleng0000.art"
+base_url = "https://abridge.netlify.app"
 # Usable site directly from disk, Including Search: "/home/jieiku/.dev/abridge/public"
 # Also set index format = "elasticlunr_javascript", and in [extra] uglyurls = true, integrity = false
 # If you use the npm/node script then all you have to do is set offline = true, and everything else is automatic.
@@ -39,6 +39,35 @@ external_links_target_blank = true # rel="noopener"
 external_links_no_follow = false   # rel="nofollow"
 external_links_no_referrer = false # rel="noreferrer"
 smart_punctuation = false          # `...` to `…`, `"quote"` to `“curly”` etc
+
+# Any Extra language you do not use, delete or comment out the extra language sections:
+[languages.fr]
+title = "Abridge"
+description = "Abridge est un thème Zola rapide et léger utilisant le html sémantique, le CSS abridge.css class-light et aucun JS obligatoire."
+generate_feed = true
+build_search_index = true
+search.include_title = true # include title of page/section in index
+search.include_description = true # include description of page/section in index
+search.include_content = true # include rendered content of page/section in index
+# search.truncate_content_length = 100 # Truncate at nth character. May be useful if index is getting too large.
+taxonomies = [
+#    {name = "categories", feed = true},
+    {name = "tags", feed = true},
+]
+
+[languages.es]
+title = "Abridge"
+description = "Abridge es un tema de Zola rápido y liviano que utiliza HTML semántico, CSS ligero de clase abridge.css y JS no obligatorio."
+generate_feed = true
+build_search_index = true
+search.include_title = true # include title of page/section in index
+search.include_description = true # include description of page/section in index
+search.include_content = true # include rendered content of page/section in index
+# search.truncate_content_length = 100 # Truncate at nth character. May be useful if index is getting too large.
+taxonomies = [
+#    {name = "categories", feed = true},
+    {name = "tags", feed = true},
+]
 
 [extra]
 ###############################################################################
@@ -202,7 +231,7 @@ webmanifest = "manifest.min.json" # Required for PWAs
 ###  The options below other than pwa=true, only come into play when the npm/node script is ran.
 ###############################################################################
 
-pwa = false # true to load the service worker
+pwa = true # true to load the service worker
 pwa_VER = '3.11.0' # Service Worker cache version. (increment if you need to force a new cache)
 
 ### 3600=1hour, 28800=8hours, 86400=1day, 604800=1week, 1209600=2weeks
