@@ -1,0 +1,18 @@
+image: alpine/edge
+packages:
+  - hut
+  - zola
+oauth: pages.sr.ht/PAGES:RW
+environment:
+  site: https://yleng0000.art
+sources:
+  - https://git.sr.ht/~your_username/my-website
+tasks:
+  - build: |
+      cd mysite
+      zola build
+  - package: |
+      cd mysite
+      tar -C public -cvz . > ../site.tar.gz
+  - upload: |
+      hut pages publish -d $site site.tar.gz
